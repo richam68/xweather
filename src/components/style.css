@@ -1,0 +1,27 @@
+body {
+    font-family: "Arial", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+  }
+.button{
+    width: 70px;
+    height: 40px;
+    padding: 10px;
+    background-color: rgb(100, 191, 100);
+    color: white;
+}
+.searchbar{
+    height: 30px;
+    padding: 4px;
+    margin: 2px
+}
+.weather-cards{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    margin: 5px;
+    padding: 12px;
+}
