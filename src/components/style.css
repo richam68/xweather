@@ -24,7 +24,7 @@ justify-content: center;
 align-items: center;
 margin-top: 12px
 }
-.weather-cards-wrapper{
+.weather-card{
     background-color: aliceblue;
     margin: 10px;
     padding: 12px;
