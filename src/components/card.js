@@ -4,9 +4,11 @@ import "./style.css";
 
 const Card = ({heading, data}) => {
   return (
-    <div >
+    <div className='weather-cards-wrapper'>
+      <div>
       <h6>{heading}</h6>
-      <p>{data}</p>
+      <p className='data'>{data}</p>
+    </div>
     </div>
   )
 }

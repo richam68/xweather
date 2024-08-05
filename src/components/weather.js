@@ -13,19 +13,18 @@ const Weather = () => {
 
   const weatherApi = async () => {
     try {
-    setLoading(true)
+      setLoading(true);
       const response = await fetch(
         `https://api.weatherapi.com/v1/current.json?key=b2f564921ce7443b89f175444232708&q=${search}`
       );
-      const responseData = await response.json()
+      const responseData = await response.json();
       console.log("response", responseData);
       setWeatherData(responseData);
-
     } catch (err) {
       console.log("err", err);
       alert("Failed to fetch weather data");
-    }finally{
-        setLoading(false)
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -42,17 +41,23 @@ const Weather = () => {
         value={search}
         onChange={handleSearch}
       />
-      <button className="button" onClick={weatherApi}>Search</button>
+      <button className="button" onClick={weatherApi}>
+        Search
+      </button>
 
-      {loading && <p>Loading data...</p> }
+      {loading && <p>Loading data...</p>}
+
       {!loading && weatherData && (
-      <div className="weather-cards">
-        <Card heading="Temperature" data={`${weatherData.current.humidity}°C`}/>
-        <Card heading="Humidity" data={`${weatherData.current.temp_c}%`}/>
-        <Card heading="Condition" data={weatherData.current.condition.text}/>
-        <Card heading="Wind" data={`${weatherData.current.wind_kph}kph`}/>
+        <div className="weather-cards">
+          <Card
+            heading="Temperature"
+            data={`${weatherData.current.humidity}°C`}
+          />
+          <Card heading="Humidity" data={`${weatherData.current.temp_c}%`} />
+          <Card heading="Condition" data={weatherData.current.condition.text} />
+          <Card heading="Wind" data={`${weatherData.current.wind_kph}kph`} />
         </div>
-)}
+      )}
     </div>
   );
 };
